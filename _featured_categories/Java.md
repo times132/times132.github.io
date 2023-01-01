@@ -4,7 +4,7 @@ type: category
 title: Java
 slug: java
 sidebar: true
-order: 2
+order: 1
 description: >
-    Java about development
+    자바 관련
 ---

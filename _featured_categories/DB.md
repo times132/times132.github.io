@@ -4,7 +4,7 @@ type: category
 title: DB
 slug: db
 sidebar: true
-order: 3
+order: 2
 description: >
-    Database about development
+    데이터베이스 관련
 ---
