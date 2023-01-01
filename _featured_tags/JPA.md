@@ -5,7 +5,7 @@ title: JPA
 slug: jpa
 category: java
 sidebar: true
-order: 1
+order: 2
 description: >
     JPA study / Problem solutions
 ---

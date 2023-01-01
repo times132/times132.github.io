@@ -47,12 +47,14 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Example Content" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2022-12-28T18:30:06+09:00","datePublished":"2012-02-07T00:00:00+09:00","description":"Howdy! This is an example blog post that shows several types of HTML content supported in this theme.","headline":"Example Content","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/example/2012-02-07-example-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"ByungJin Park"},"url":"http://localhost:4000/example/2012-02-07-example-content/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-01-01T20:56:56+09:00","datePublished":"2012-02-07T00:00:00+09:00","description":"Howdy! This is an example blog post that shows several types of HTML content supported in this theme.","headline":"Example Content","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/example/2012-02-07-example-content/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"ByungJin Park"},"url":"http://localhost:4000/example/2012-02-07-example-content/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
 
+  
+    <meta name="keywords" content="Developer,Backend,Java">
   
 
 
@@ -114,7 +116,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2022-12-28T22:52:22+09:00',
+    INDEX_KEY: 'index--2023-01-01T22:39:46+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -512,7 +514,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title"><span>Introducing Hydejack 9</span></a>  <time class="faded fine" datetime="2020-07-03T00:00:00+09:00">03 Jul 2020</time></li>                        <li class="h4">  <a href="/example/2018-06-01-example-content-iii/" class="flip-title"><span>Example Content III</span></a>  <time class="faded fine" datetime="2018-06-01T00:00:00+09:00">01 Jun 2018</time></li>                        <li class="h4">  <a href="/example/2017-11-23-example-content-ii/" class="flip-title"><span>Example Content II</span></a>  <time class="faded fine" datetime="2017-11-23T00:00:00+09:00">23 Nov 2017</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/example/java/2022-01-01-test-java-content/" class="flip-title"><span>Java 테스트 게시글</span></a>  <time class="faded fine" datetime="2022-01-01T00:00:00+09:00">01 Jan 2022</time></li>                        <li class="h4">  <a href="/example/2020-07-03-introducing-hydejack-9/" class="flip-title"><span>Introducing Hydejack 9</span></a>  <time class="faded fine" datetime="2020-07-03T00:00:00+09:00">03 Jul 2020</time></li>                        <li class="h4">  <a href="/example/2018-06-01-example-content-iii/" class="flip-title"><span>Example Content III</span></a>  <time class="faded fine" datetime="2018-06-01T00:00:00+09:00">01 Jun 2018</time></li>            </ul></aside>
 
   
 
@@ -577,11 +579,6 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
     <a class="sidebar-title" href="/"><h2 class="h1">blog test title</h2></a>
     
     
-      <p class="">
-        Change <code class="language-plaintext highlighter-rouge">tagline</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code>
-
-      </p>
-    
   </div>
 
   <nav class="sidebar-nav heading" role="navigation">
@@ -592,10 +589,6 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
   
     
       
-    
-  
-    
-      
         
         
         <li>
@@ -603,7 +596,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
             <input type="checkbox" id="folder-checkbox-10" />
           
           <div class="list-wrapper">
-            <a  href="/java/" class="sidebar-nav-item"  >Java</a>
+            <a id="_navigation" href="/java/" class="sidebar-nav-item"  >Java</a>
             
               <button class="spread-btn" onclick="javascript:spread(10)">
                 <label id="spread-icon-10" class="material-icons">arrow_right</label>
@@ -613,17 +606,21 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
           
             <ul class="list-body">
               <li>
-                <a class="sidebar-nav-subitem" href="/tag-jpa/">JPA</a>
+                <a class="sidebar-nav-subitem" href="/tag-spring/">Spring</a>
               </li>
             
           
             
               <li>
-                <a class="sidebar-nav-subitem" href="/tag-spring/">Spring</a>
+                <a class="sidebar-nav-subitem" href="/tag-jpa/">JPA</a>
               </li>
             </ul>
           
         </li>
+      
+    
+  
+    
       
     
   
@@ -639,6 +636,21 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
           
           <div class="list-wrapper">
             <a  href="/db/" class="sidebar-nav-item"  >DB</a>
+            
+          </div>
+          
+        </li>
+      
+    
+  
+    
+      
+        
+        
+        <li>
+          
+          <div class="list-wrapper">
+            <a  href="/algorithm/" class="sidebar-nav-item"  >Algorithm</a>
             
           </div>
           
