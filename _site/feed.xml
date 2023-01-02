@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-01-01T22:39:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blog test title</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">Java 테스트 게시글</title><link href="http://localhost:4000/example/java/2022-01-01-test-java-content/" rel="alternate" type="text/html" title="Java 테스트 게시글" /><published>2022-01-01T00:00:00+09:00</published><updated>2023-01-01T20:54:38+09:00</updated><id>http://localhost:4000/example/java/test-java-content</id><content type="html" xml:base="http://localhost:4000/example/java/2022-01-01-test-java-content/"><![CDATA[<p>자바 관련 내용2</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="spring" /><summary type="html"><![CDATA[자바 관련 내용2]]></summary></entry><entry><title type="html">Introducing Hydejack 9</title><link href="http://localhost:4000/example/2020-07-03-introducing-hydejack-9/" rel="alternate" type="text/html" title="Introducing Hydejack 9" /><published>2020-07-03T00:00:00+09:00</published><updated>2022-12-28T18:30:06+09:00</updated><id>http://localhost:4000/example/introducing-hydejack-9</id><content type="html" xml:base="http://localhost:4000/example/2020-07-03-introducing-hydejack-9/"><![CDATA[<p class="lead">Version 9 is the most complete version of Hydejack yet.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-01-02T10:23:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blog test title</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[프로그래머스] 부대복귀</title><link href="http://localhost:4000/algorithm/2022-01-02-%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80/" rel="alternate" type="text/html" title="[프로그래머스] 부대복귀" /><published>2022-01-02T00:00:00+09:00</published><updated>2023-01-02T10:23:04+09:00</updated><id>http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80</id><content type="html" xml:base="http://localhost:4000/algorithm/2022-01-02-%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80/"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+
+<p>강철부대의 각 부대원이 여러 지역에 뿔뿔이 흩어져 특수 임무를 수행 중입니다. 지도에서 강철부대가 위치한 지역을 포함한 각 지역은 유일한 번호로 구분되며, 두 지역 간의 길을 통과하는 데 걸리는 시간은 모두 1로 동일합니다. 임무를 수행한 각 부대원은 지도 정보를 이용하여 최단시간에 부대로 복귀하고자 합니다. 다만 적군의 방해로 인해, 임무의 시작 때와 다르게 되돌아오는 경로가 없어져 복귀가 불가능한 부대원도 있을 수 있습니다.</p>
+
+<p>강철부대가 위치한 지역을 포함한 총지역의 수 <strong><code class="language-plaintext highlighter-rouge">n</code></strong>, 두 지역을 왕복할 수 있는 길 정보를 담은 2차원 정수 배열 <strong><code class="language-plaintext highlighter-rouge">roads</code></strong>, 각 부대원이 위치한 서로 다른 지역들을 나타내는 정수 배열 <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>, 강철부대의 지역 <strong><code class="language-plaintext highlighter-rouge">destination</code></strong>이 주어졌을 때, 주어진 <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>의 원소 순서대로 강철부대로 복귀할 수 있는 최단시간을 담은 배열을 return하는 solution 함수를 완성해주세요. 복귀가 불가능한 경우 해당 부대원의 최단시간은 -1입니다.</p>
+
+<hr />
+
+<h3 id="입력">입력</h3>
+
+<ul>
+  <li>3 ≤ <strong><code class="language-plaintext highlighter-rouge">n</code></strong> ≤ 100,000
+    <ul>
+      <li>각 지역은 정수 1부터 <strong><code class="language-plaintext highlighter-rouge">n</code></strong>까지의 번호로 구분됩니다.</li>
+    </ul>
+  </li>
+  <li>2 ≤ <strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 길이 ≤ 500,000
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 원소의 길이 = 2</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 원소는 [a, b] 형태로 두 지역 a, b가 서로 왕복할 수 있음을 의미합니다.(1 ≤ a, b ≤ n, a ≠ b)</li>
+      <li>동일한 정보가 중복해서 주어지지 않습니다.
+        <ul>
+          <li>동일한 [a, b]가 중복해서 주어지지 않습니다.</li>
+          <li>[a, b]가 있다면 [b, a]는 주어지지 않습니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>의 길이 ≤ 500
+    <ul>
+      <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">sources[i]</code></strong> ≤ n</li>
+    </ul>
+  </li>
+  <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">destination</code></strong> ≤ n</li>
+</ul>
+
+<hr />
+
+<h3 id="풀이">풀이</h3>
+
+<p><strong><code class="language-plaintext highlighter-rouge">BFS</code></strong>로 각 노드에서 출발해서 최단 거리를 구하는 방법과 <strong><code class="language-plaintext highlighter-rouge">다익스트라</code></strong> 알고리즘을 이용해 최단 거리를 구하는 방법 중 다익스트라 알고리즘을 사용하였습니다.
+<br />
+다익스트라는 가중치를 사용하지만 위 문제에는 가중치가 1로 고정되어있어 따로 Node 클래스를 만들지 않았습니다.
+<br /></p>
+
+<p>각 노드에서 거리를 기본 <strong><code class="language-plaintext highlighter-rouge">-1</code></strong>로 설정하고 <strong><code class="language-plaintext highlighter-rouge">Dijkstra</code></strong> 함수에서 방문 하지 않은 각 노드를 순환하면서 거리를 +1 하면서 구하는 방식 입니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dist</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Dijkstra</span><span class="o">(</span><span class="kt">int</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+        <span class="n">dist</span><span class="o">[</span><span class="n">destination</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        
+        <span class="k">while</span><span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">pq</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pq</span><span class="o">).</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">nq</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pq</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">dist</span><span class="o">[</span><span class="n">nq</span><span class="o">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="k">continue</span><span class="o">;</span>
+                <span class="n">dist</span><span class="o">[</span><span class="n">nq</span><span class="o">]</span> <span class="o">=</span> <span class="n">dist</span><span class="o">[</span><span class="n">pq</span><span class="o">]</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">nq</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">roads</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">sources</span><span class="o">,</span> <span class="kt">int</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">sources</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">dist</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">graph</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;());</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">road</span> <span class="o">:</span> <span class="n">roads</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">0</span><span class="o">]).</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+            <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">1</span><span class="o">]).</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="nc">Dijkstra</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">sources</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">dist</span><span class="o">[</span><span class="n">sources</span><span class="o">[</span><span class="n">i</span><span class="o">]];</span>
+        <span class="o">}</span>
+        
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><summary type="html"><![CDATA[문제 설명]]></summary></entry><entry><title type="html">Java 테스트 게시글</title><link href="http://localhost:4000/java/2022-01-01-test-java-content/" rel="alternate" type="text/html" title="Java 테스트 게시글" /><published>2022-01-01T00:00:00+09:00</published><updated>2023-01-01T22:52:17+09:00</updated><id>http://localhost:4000/java/test-java-content</id><content type="html" xml:base="http://localhost:4000/java/2022-01-01-test-java-content/"><![CDATA[<p>자바 관련 내용2</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="spring" /><summary type="html"><![CDATA[자바 관련 내용2]]></summary></entry><entry><title type="html">Introducing Hydejack 9</title><link href="http://localhost:4000/2020-07-03-introducing-hydejack-9/" rel="alternate" type="text/html" title="Introducing Hydejack 9" /><published>2020-07-03T00:00:00+09:00</published><updated>2022-12-28T18:30:06+09:00</updated><id>http://localhost:4000/introducing-hydejack-9</id><content type="html" xml:base="http://localhost:4000/2020-07-03-introducing-hydejack-9/"><![CDATA[<p class="lead">Version 9 is the most complete version of Hydejack yet.</p>
 
 <p><a href="#linking-in-style">Modernized</a> <a href="#whats-in-the-cards">design</a>, <a href="#ready-for-the-big-screen">big headlines</a>, big new features: <a href="#built-in-search">Built-In Search</a>, <a href="#sticky-table-of-contents">Sticky Table of Contents</a>, and <a href="#auto-hiding-navbar">Auto-Hiding Navbar</a>. That <a href="#and-much-more">and more</a> is Hydejack 9.</p>
 
@@ -29,7 +119,7 @@
 <p>Hydejack 9 now lets you use content cards for both projects and posts. 
 The cards have been redesigned with a new hover style and drop shadows and they retain their unique transition-to-next-page animations, which now also work on the <code class="language-plaintext highlighter-rouge">blog</code> layout. The new <code class="language-plaintext highlighter-rouge">grid</code> layout lets you do that.</p>
 
-<p>Good images are key to making the most out of content cards. For that reason, a <a href="/docs/basics/#adding-images">chapter on images</a> has been added to the documentation.</p>
+<p>Good images are key to making the most out of content cards. For that reason, a <a href="../../docs/basics.md#adding-images">chapter on images</a> has been added to the documentation.</p>
 
 <h2 id="built-in-search">Built-In Search</h2>
 
@@ -59,7 +149,7 @@ What’s unique about it is that it simply picks up the table of contents alread
   <li>…and the option to disable grouping projects by year.</li>
 </ul>
 
-<p>Read the the <a href="/CHANGELOG/" class="heading flip-title">CHANGELOG</a> for the full scope of features and improvements made in Hydejack 9.
+<p>Read the the <a href="../../CHANGELOG.md" class="heading flip-title">CHANGELOG</a> for the full scope of features and improvements made in Hydejack 9.
 Maybe just glance at it to confirm that it is indeed a pretty long list.</p>
 
 <h2 id="even-more-to-come">Even More to Come</h2>
@@ -87,7 +177,7 @@ The source code is available on <a href="https://github.com/hydecorp/hydejack">G
   If you’re technically inclined, you can adopt the code located in <code class="language-plaintext highlighter-rouge">_includes/js/search-worker.js</code> to your needs. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[Version 9 is the most complete version of Hydejack yet. Modernized design, big headlines, and big new features.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/jeremy-bishop@0,5x.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/jeremy-bishop@0,5x.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content III</title><link href="http://localhost:4000/example/2018-06-01-example-content-iii/" rel="alternate" type="text/html" title="Example Content III" /><published>2018-06-01T00:00:00+09:00</published><updated>2023-01-01T21:00:18+09:00</updated><id>http://localhost:4000/example/example-content-iii</id><content type="html" xml:base="http://localhost:4000/example/2018-06-01-example-content-iii/"><![CDATA[<p>Hydejack offers a few additional features to markup your markdown.
+</div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><summary type="html"><![CDATA[Version 9 is the most complete version of Hydejack yet. Modernized design, big headlines, and big new features.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/jeremy-bishop@0,5x.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/jeremy-bishop@0,5x.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content III</title><link href="http://localhost:4000/2018-06-01-example-content-iii/" rel="alternate" type="text/html" title="Example Content III" /><published>2018-06-01T00:00:00+09:00</published><updated>2023-01-01T21:00:18+09:00</updated><id>http://localhost:4000/example-content-iii</id><content type="html" xml:base="http://localhost:4000/2018-06-01-example-content-iii/"><![CDATA[<p>Hydejack offers a few additional features to markup your markdown.
 Don’t worry, these are merely CSS classes added with kramdown’s <code class="language-plaintext highlighter-rouge">{:...}</code> syntax,
 so that your content remains compatible with other Jekyll themes.</p>
 
@@ -277,7 +367,7 @@ A caption to an image.</p>
 </blockquote>
 
 <h2 id="faded-text">Faded text</h2>
-<p class="faded">I’m faded, faded, faded.</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[A page showing Hydejack-specific markdown content.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/example-content-iii.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/example-content-iii.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content II</title><link href="http://localhost:4000/example/2017-11-23-example-content-ii/" rel="alternate" type="text/html" title="Example Content II" /><published>2017-11-23T00:00:00+09:00</published><updated>2022-12-28T18:30:06+09:00</updated><id>http://localhost:4000/example/example-content-ii</id><content type="html" xml:base="http://localhost:4000/example/2017-11-23-example-content-ii/"><![CDATA[<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
+<p class="faded">I’m faded, faded, faded.</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><summary type="html"><![CDATA[A page showing Hydejack-specific markdown content.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/example-content-iii.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/example-content-iii.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content II</title><link href="http://localhost:4000/2017-11-23-example-content-ii/" rel="alternate" type="text/html" title="Example Content II" /><published>2017-11-23T00:00:00+09:00</published><updated>2022-12-28T18:30:06+09:00</updated><id>http://localhost:4000/example-content-ii</id><content type="html" xml:base="http://localhost:4000/2017-11-23-example-content-ii/"><![CDATA[<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
 
 <p>There should be whitespace between paragraphs.</p>
 
@@ -460,7 +550,7 @@ A caption to an image.</p>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[A page showing how regular markdown content is styled in Hydejack.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/example-content-ii.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/example-content-ii.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content</title><link href="http://localhost:4000/example/2012-02-07-example-content/" rel="alternate" type="text/html" title="Example Content" /><published>2012-02-07T00:00:00+09:00</published><updated>2023-01-01T20:56:56+09:00</updated><id>http://localhost:4000/example/example-content</id><content type="html" xml:base="http://localhost:4000/example/2012-02-07-example-content/"><![CDATA[<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><summary type="html"><![CDATA[A page showing how regular markdown content is styled in Hydejack.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/example-content-ii.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/example-content-ii.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Content</title><link href="http://localhost:4000/2012-02-07-example-content/" rel="alternate" type="text/html" title="Example Content" /><published>2012-02-07T00:00:00+09:00</published><updated>2023-01-01T20:56:56+09:00</updated><id>http://localhost:4000/example-content</id><content type="html" xml:base="http://localhost:4000/2012-02-07-example-content/"><![CDATA[<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
 
 <blockquote>
   <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -592,4 +682,4 @@ A caption to an image.</p>
   </tfoot>
 </table>
 
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[Howdy! This is an example blog post that shows several types of HTML content supported in this theme.]]></summary></entry></feed>
+<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><summary type="html"><![CDATA[Howdy! This is an example blog post that shows several types of HTML content supported in this theme.]]></summary></entry></feed>
