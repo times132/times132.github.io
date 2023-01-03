@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.1.6 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[프로그래머스] 부대복귀 | blog test title</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="[프로그래머스] 부대복귀" />
+<meta name="author" content="ByungJin Park" />
+<meta property="og:locale" content="ko_KR, en_US" />
+<meta name="description" content="문제 설명" />
+<meta property="og:description" content="문제 설명" />
+<link rel="canonical" href="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" />
+<meta property="og:url" content="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" />
+<meta property="og:site_name" content="blog test title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-02T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[프로그래머스] 부대복귀" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-01-03T20:08:26+09:00","datePublished":"2022-01-02T00:00:00+09:00","description":"문제 설명","headline":"[프로그래머스] 부대복귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"ByungJin Park"},"url":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="Developer,Backend,Java">
+  
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="blog test title">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="blog test title">
+
+<meta name="generator" content="Hydejack v9.1.6" />
+
+
+<link rel="alternate" href="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" hreflang="ko-kr, en-us">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="blog test title" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="/assets/js/sidebar-folder.js"></script>
+
+
+
+
+
+<script>!function(r,c){"use strict";function a(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=c.createElement("script"),e=(n.src=e,t&&a(n,"load",t,{once:!0}),c.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=c.createElement("script");function o(){r._loaded=!0,t&&a(n,"load",t,{once:!0});var e=c.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():a(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){a(c.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2023-01-03T22:33:29+09:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+<script async src="/assets/bower_components/MathJax/es5/tex-mml-chtml.js" id="_MathJax"></script>
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.1.6.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i&display=swap" id="_fontsPreload">
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.5);--accent-color-highlight: rgba(79, 177, 186, 0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71)}
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+</head>
+
+<body class="no-break-layout">
+  
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/algorithm/">algorithm</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>부대복귀.html</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-algorithm-부대복귀" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        [프로그래머스] 부대복귀
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2022-01-02T00:00:00+09:00">02 Jan 2022</time> in <a href="/algorithm/" class="flip-title">Algorithm</a> on <span>Algorithm</span>
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 03 Jan 2023">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2023-01-03T20:08:26+09:00">2023-01-03</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    <h3 id="문제-설명">문제 설명</h3>
+
+<p>강철부대의 각 부대원이 여러 지역에 뿔뿔이 흩어져 특수 임무를 수행 중입니다. 지도에서 강철부대가 위치한 지역을 포함한 각 지역은 유일한 번호로 구분되며, 두 지역 간의 길을 통과하는 데 걸리는 시간은 모두 1로 동일합니다. 임무를 수행한 각 부대원은 지도 정보를 이용하여 최단시간에 부대로 복귀하고자 합니다. 다만 적군의 방해로 인해, 임무의 시작 때와 다르게 되돌아오는 경로가 없어져 복귀가 불가능한 부대원도 있을 수 있습니다.</p>
+
+<p>강철부대가 위치한 지역을 포함한 총지역의 수 <strong><code class="language-plaintext highlighter-rouge">n</code></strong>, 두 지역을 왕복할 수 있는 길 정보를 담은 2차원 정수 배열 <strong><code class="language-plaintext highlighter-rouge">roads</code></strong>, 각 부대원이 위치한 서로 다른 지역들을 나타내는 정수 배열 <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>, 강철부대의 지역 <strong><code class="language-plaintext highlighter-rouge">destination</code></strong>이 주어졌을 때, 주어진 <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>의 원소 순서대로 강철부대로 복귀할 수 있는 최단시간을 담은 배열을 return하는 solution 함수를 완성해주세요. 복귀가 불가능한 경우 해당 부대원의 최단시간은 -1입니다.</p>
+
+<hr />
+
+<h3 id="입력">입력</h3>
+
+<ul>
+  <li>3 ≤ <strong><code class="language-plaintext highlighter-rouge">n</code></strong> ≤ 100,000
+    <ul>
+      <li>각 지역은 정수 1부터 <strong><code class="language-plaintext highlighter-rouge">n</code></strong>까지의 번호로 구분됩니다.</li>
+    </ul>
+  </li>
+  <li>2 ≤ <strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 길이 ≤ 500,000
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 원소의 길이 = 2</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">roads</code></strong>의 원소는 [a, b] 형태로 두 지역 a, b가 서로 왕복할 수 있음을 의미합니다.(1 ≤ a, b ≤ n, a ≠ b)</li>
+      <li>동일한 정보가 중복해서 주어지지 않습니다.
+        <ul>
+          <li>동일한 [a, b]가 중복해서 주어지지 않습니다.</li>
+          <li>[a, b]가 있다면 [b, a]는 주어지지 않습니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">sources</code></strong>의 길이 ≤ 500
+    <ul>
+      <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">sources[i]</code></strong> ≤ n</li>
+    </ul>
+  </li>
+  <li>1 ≤ <strong><code class="language-plaintext highlighter-rouge">destination</code></strong> ≤ n</li>
+</ul>
+
+<hr />
+
+<h3 id="풀이">풀이</h3>
+
+<p><strong><code class="language-plaintext highlighter-rouge">BFS</code></strong>로 각 노드에서 출발해서 최단 거리를 구하는 방법과 <strong><code class="language-plaintext highlighter-rouge">다익스트라</code></strong> 알고리즘을 이용해 최단 거리를 구하는 방법 중 다익스트라 알고리즘을 사용하였습니다.
+<br />
+다익스트라는 가중치를 사용하지만 위 문제에는 가중치가 1로 고정되어있어 따로 Node 클래스를 만들지 않았습니다.
+<br /></p>
+
+<p>각 노드에서 거리를 기본 <strong><code class="language-plaintext highlighter-rouge">-1</code></strong>로 설정하고 <strong><code class="language-plaintext highlighter-rouge">Dijkstra</code></strong> 함수에서 방문 하지 않은 각 노드를 순환하면서 거리를 +1 하면서 구하는 방식 입니다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dist</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Dijkstra</span><span class="o">(</span><span class="kt">int</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+        <span class="n">dist</span><span class="o">[</span><span class="n">destination</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        
+        <span class="k">while</span><span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">pq</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pq</span><span class="o">).</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">nq</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pq</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">dist</span><span class="o">[</span><span class="n">nq</span><span class="o">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="k">continue</span><span class="o">;</span>
+                <span class="n">dist</span><span class="o">[</span><span class="n">nq</span><span class="o">]</span> <span class="o">=</span> <span class="n">dist</span><span class="o">[</span><span class="n">pq</span><span class="o">]</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">nq</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">roads</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">sources</span><span class="o">,</span> <span class="kt">int</span> <span class="n">destination</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">sources</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">dist</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">graph</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;());</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">road</span> <span class="o">:</span> <span class="n">roads</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">0</span><span class="o">]).</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+            <span class="n">graph</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">1</span><span class="o">]).</span><span class="na">add</span><span class="o">(</span><span class="n">road</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="nc">Dijkstra</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">sources</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">dist</span><span class="o">[</span><span class="n">sources</span><span class="o">[</span><span class="n">i</span><span class="o">]];</span>
+        <span class="o">}</span>
+        
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="/assets/img/me.jpg"
+    srcset="/assets/img/me.jpg 1x,/assets/img/me.jpg 2x"
+    
+  
+  alt="Jin"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">_data/authors.yml</code> to edit this text.</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/times132" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:times132@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/java/test-java-content.html" class="flip-title"><span>Java 테스트 게시글</span></a>  <time class="faded fine" datetime="2022-01-01T00:00:00+09:00">01 Jan 2022</time></li>                        <li class="h4">  <a href="/introducing-hydejack-9.html" class="flip-title"><span>Introducing Hydejack 9</span></a>  <time class="faded fine" datetime="2020-07-03T00:00:00+09:00">03 Jul 2020</time></li>                        <li class="h4">  <a href="/example-content-iii.html" class="flip-title"><span>Example Content III</span></a>  <time class="faded fine" datetime="2018-06-01T00:00:00+09:00">01 Jun 2018</time></li>            </ul></aside>
+
+  
+
+  
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2022. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      
+    
+    </small></nav>
+  
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  side="left"
+  threshold="10"
+  noscroll
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg " style="background:center url(/assets/img/sidebar-bg.jpg)"></div>
+
+    <div class="sidebar-sticky no-fouc">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.png" class="avatar" alt="blog test title" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">blog test title</h2></a>
+    
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+  
+  
+    
+      
+        
+        
+        <li>
+          
+            <input type="checkbox" id="folder-checkbox-10" />
+          
+          <div class="list-wrapper">
+            <a id="_navigation" href="/java/" class="sidebar-nav-item"  >Java</a>
+            
+              <button class="spread-btn" onclick="javascript:spread(10)">
+                <label id="spread-icon-10" class="material-icons">arrow_right</label>
+              </button>
+            
+          </div>
+          
+            <ul class="list-body">
+              <li>
+                <a class="sidebar-nav-subitem" href="/tag-spring/">Spring</a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="sidebar-nav-subitem" href="/tag-jpa/">JPA</a>
+              </li>
+            </ul>
+          
+        </li>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+        
+        <li>
+          
+          <div class="list-wrapper">
+            <a  href="/db/" class="sidebar-nav-item"  >DB</a>
+            
+          </div>
+          
+        </li>
+      
+    
+  
+    
+      
+        
+        
+        <li>
+          
+          <div class="list-wrapper">
+            <a  href="/algorithm/" class="sidebar-nav-item"  >Algorithm</a>
+            
+          </div>
+          
+        </li>
+      
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/times132" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:times132@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>!function(){var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())}();
+</script>
+  <script src="/assets/js/hydejack-9.1.6.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.1.6.js" nomodule defer></script>
+  
+
+  
+
+<!--<![endif]-->
+  <!-- <script>
+  document.querySelector('hy-push-state').setAttribute('prefetch', '');
+
+  document.querySelectorAll('.sidebar a[href^="/"]').forEach(function (el) { 
+    el.addEventListener('click', function (e) {
+      if (el.pathname === window.location.pathname) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelector('hy-drawer').close();
+      }
+    });
+  });
+</script> -->
+
+<!--
+Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+-->
+<script>
+  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
+    function e(e){
+      (console.error?console.error:console.log).call(console,e)
+    }
+
+    function t(e){
+      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
+    }
+
+    function r(e,t){
+      var r=e.substr(t,2);return parseInt(r,16)
+    }
+
+    function n(e,n){
+      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
+        var l=r(e,a)^c;
+        o+=String.fromCharCode(l)
+      }
+      return t(o)
+    }
+
+    var o="/cdn-cgi/l/email-protection#",
+        c=".__cf_email__",
+        a="data-cfemail",
+        l=document.createElement("div");
+
+    !function(){
+      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
+        try{
+          var c=t[r],a=c.href.indexOf(o);
+          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
+        }catch(t){
+          e(t)
+        }
+    }(),
+    function(){
+      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
+        try{
+          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
+          o.parentNode.replaceChild(i,o)
+        }catch(t){
+          e(t)
+        }
+    }()
+  });
+</script>
+
+
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+</div>
+
+
+</body>
+</html>
