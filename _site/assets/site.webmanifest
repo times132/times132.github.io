@@ -1,7 +1,7 @@
 {
   "lang": "ko-KR, en-US",
-  "name": "blog test title",
-  "short_name": "blog test title",
+  "name": "Develop Log",
+  "short_name": "Develop Log",
   "description": "",
   "start_url": "/?utm_source=homescreen",
   "theme_color": "rgb(25,55,71)",
