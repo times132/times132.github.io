@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-02-19T22:27:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[CodeUp] 숫자등고선</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" rel="alternate" type="text/html" title="[CodeUp] 숫자등고선" /><published>2023-02-19T00:00:00+09:00</published><updated>2023-02-19T22:27:09+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-02-20T21:07:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[MongoDB] Aggregate</title><link href="http://localhost:4000/db/mongo-aggregate.html" rel="alternate" type="text/html" title="[MongoDB] Aggregate" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T21:07:07+09:00</updated><id>http://localhost:4000/db/mongo-aggregate</id><content type="html" xml:base="http://localhost:4000/db/mongo-aggregate.html"><![CDATA[<ul>
+  <li>find로 처리하기 어려운 데이터를 가공하기 위한 기능</li>
+  <li>pipeline 형식으로 동작하며 <strong><code class="language-plaintext highlighter-rouge">match, group, sort 등</code></strong>다양한 스테이지 값 지원 (<a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/">MongoDB Aggregate Stage</a>)</li>
+</ul>
+
+<h3 id="rdb와-비교">RDB와 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>where</td>
+      <td>$match</td>
+    </tr>
+    <tr>
+      <td>group by</td>
+      <td>$group</td>
+    </tr>
+    <tr>
+      <td>having</td>
+      <td>$match</td>
+    </tr>
+    <tr>
+      <td>select</td>
+      <td>$project</td>
+    </tr>
+    <tr>
+      <td>order by</td>
+      <td>$sort</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>$limit</td>
+    </tr>
+    <tr>
+      <td>sum</td>
+      <td>$sum</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>$sum</td>
+    </tr>
+    <tr>
+      <td>join</td>
+      <td>$lookup</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="예시">예시</h3>
+<ul>
+  <li>data
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">----------------------------</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">-----------------------------</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>$match
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}}</span>
+<span class="p">])</span>
+</code></pre></div>    </div>
+    <p><img src="/assets/img/post/2023-02-20/match_result.png" alt="match_result" /></p>
+  </li>
+  <li>$sort
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}},</span>
+  <span class="p">{</span> <span class="err">$</span><span class="n">sort</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.price'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>                 <span class="o">//</span> <span class="mi">1</span><span class="p">:</span> <span class="k">Asc</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="k">Desc</span>
+<span class="p">]);</span>
+</code></pre></div>    </div>
+    <p><img src="/assets/img/post/2023-02-20/sort_result.png" alt="sort_result" /></p>
+  </li>
+</ul>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="db" /><category term="db" /><summary type="html"><![CDATA[find로 처리하기 어려운 데이터를 가공하기 위한 기능 pipeline 형식으로 동작하며 match, group, sort 등다양한 스테이지 값 지원 (MongoDB Aggregate Stage)]]></summary></entry><entry><title type="html">[CodeUp] 숫자등고선</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" rel="alternate" type="text/html" title="[CodeUp] 숫자등고선" /><published>2023-02-19T00:00:00+09:00</published><updated>2023-02-20T19:53:18+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
 <p>어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.</p>
 
 <p>여러분들은 배열크기 N과 시작위치 X, Y를 입력받아 숫자등고선을 만드시오.</p>
@@ -52,7 +166,7 @@
 <span class="n">bfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">','</span><span class="p">,</span><span class="s">''</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><summary type="html"><![CDATA[문제 설명 어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.]]></summary></entry><entry><title type="html">[JPA] @Embedded, @Embeddable</title><link href="http://localhost:4000/java/Embedded.html" rel="alternate" type="text/html" title="[JPA] @Embedded, @Embeddable" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-19T20:41:36+09:00</updated><id>http://localhost:4000/java/Embedded</id><content type="html" xml:base="http://localhost:4000/java/Embedded.html"><![CDATA[]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="jpa" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[백준] ATM</title><link href="http://localhost:4000/algorithm/ATM.html" rel="alternate" type="text/html" title="[백준] ATM" /><published>2023-01-17T00:00:00+09:00</published><updated>2023-02-19T20:41:37+09:00</updated><id>http://localhost:4000/algorithm/ATM</id><content type="html" xml:base="http://localhost:4000/algorithm/ATM.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="algorithm" /><summary type="html"><![CDATA[문제 설명 어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.]]></summary></entry><entry><title type="html">[JPA] @Embedded, @Embeddable</title><link href="http://localhost:4000/java/Embedded.html" rel="alternate" type="text/html" title="[JPA] @Embedded, @Embeddable" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-19T20:41:36+09:00</updated><id>http://localhost:4000/java/Embedded</id><content type="html" xml:base="http://localhost:4000/java/Embedded.html"><![CDATA[]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="jpa" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[백준] ATM</title><link href="http://localhost:4000/algorithm/ATM.html" rel="alternate" type="text/html" title="[백준] ATM" /><published>2023-01-17T00:00:00+09:00</published><updated>2023-02-20T19:53:18+09:00</updated><id>http://localhost:4000/algorithm/ATM</id><content type="html" xml:base="http://localhost:4000/algorithm/ATM.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
 
 <p>인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다. 사람은 1번부터 N번까지 번호가 매겨져 있으며, i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.</p>
 
