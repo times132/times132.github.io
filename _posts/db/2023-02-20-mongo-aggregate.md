@@ -26,51 +26,86 @@ tags: db
   |join     |$lookup    |
 
 ### 예시
-- data
-    ```json
-    [{
-        "food": {
-          "name": "바나나",
-          "price": 10000
-        },
-        "food": {
-          "name": "사과",
-          "price": 5000
-        },
-        "food": {
-          "name": "딸기",
-          "price": 7000
-        },
-        ----------------------------
-        "food": {
-          "name": "바나나",
-          "price": 9000
-        },
-        "food": {
-          "name": "사과",
-          "price": 3000
-        },
-        "food": {
-          "name": "딸기",
-          "price": 8000
-        },
-        -----------------------------
-        "food": {
-          "name": "사과",
-          "price": 5500
-        },
-        "food": {
-          "name": "딸기",
-          "price": 7500
-        },
-        "food": {
-          "name": "바나나",
-          "price": 7700
-        }
-    }]
-    ```
+<details open>
+<summary>data</summary>
 
-- $match
+<div markdown="1">
+
+  ```json
+  [{
+      "food": {
+        "name": "바나나",
+        "price": 10000,
+        "location": {
+          "address": "강남",
+          "zip": "12345"
+        }
+      },
+      "food": {
+        "name": "사과",
+        "price": 5000,
+        "location": {
+          "address": "교대",
+          "zip": "23454"
+        }
+      },
+      "food": {
+        "name": "딸기",
+        "price": 7000,
+        "location": {
+          "address": "사당",
+          "zip": "42231"
+        }
+      },
+      ----------------------------
+      "food": {
+        "name": "바나나",
+        "price": 9000,
+        "location": {
+          "address": "논현",
+          "zip": "49893"
+        }
+      },
+      "food": {
+        "name": "사과",
+        "price": 3000,
+        "location": {
+          "address": "강남",
+          "zip": "23431"
+        }
+      },
+      "food": {
+        "name": "딸기",
+        "price": 8000,
+        "location": {
+          "address": "강남",
+          "zip": "23431"
+        }
+      }
+  }]
+  ```
+</div>
+</details>
+
+#### $project
+  - 필드 포함/제외, 새 필드 추가, 기존 필드 재설정 등 기존의 값으로 출력을 재설정
+  ```sql
+  db.blog.aggregate([
+    { $project: {
+    _id: 0,
+    'food.location.address': 1,                                            // field suppression
+    'food.price': 1,
+    'food.name': 1,
+    'total': { $multiply: ['$food.price',10]},                             // add new field and calculation
+    'food.name': { $concat: ['$food.location.address', '-', '$food.name']} // field resetting
+    }}
+  ]);
+  ```
+  ![project_result](/assets/img/post/2023-02-20/project_result.png)
+
+#### $match
+  - 지정한 조건과 일치하는 값이 나오도록 필터링 역할을 함
+  - $eq, $in, $and, $gt 등 다양한 비교연산자 지원
   ```sql
   db.blog.aggregate([
     { $match: {'food.name': {$eq: '바나나'}}}
@@ -78,7 +113,8 @@ tags: db
   ```
   ![match_result](/assets/img/post/2023-02-20/match_result.png)
 
-- $sort
+#### $sort
+
   ```sql
   db.blog.aggregate([
     { $match: {'food.name': {$eq: '바나나'}}},
