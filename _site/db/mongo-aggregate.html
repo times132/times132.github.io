@@ -35,8 +35,6 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta property="og:title" content="[MongoDB] Aggregate" />
 <meta name="author" content="ByungJin Park" />
 <meta property="og:locale" content="ko_KR, en_US" />
-<meta name="description" content="find로 처리하기 어려운 데이터를 가공하기 위한 기능 pipeline 형식으로 동작하며 match, group, sort 등다양한 스테이지 값 지원 (MongoDB Aggregate Stage)" />
-<meta property="og:description" content="find로 처리하기 어려운 데이터를 가공하기 위한 기능 pipeline 형식으로 동작하며 match, group, sort 등다양한 스테이지 값 지원 (MongoDB Aggregate Stage)" />
 <link rel="canonical" href="http://localhost:4000/db/mongo-aggregate.html" />
 <meta property="og:url" content="http://localhost:4000/db/mongo-aggregate.html" />
 <meta property="og:site_name" content="Develop Log" />
@@ -45,7 +43,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="[MongoDB] Aggregate" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-03-04T21:13:23+09:00","datePublished":"2023-02-20T00:00:00+09:00","description":"find로 처리하기 어려운 데이터를 가공하기 위한 기능 pipeline 형식으로 동작하며 match, group, sort 등다양한 스테이지 값 지원 (MongoDB Aggregate Stage)","headline":"[MongoDB] Aggregate","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/db/mongo-aggregate.html"},"url":"http://localhost:4000/db/mongo-aggregate.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-03-05T21:53:36+09:00","datePublished":"2023-02-20T00:00:00+09:00","headline":"[MongoDB] Aggregate","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/db/mongo-aggregate.html"},"url":"http://localhost:4000/db/mongo-aggregate.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -114,7 +112,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-03-04T21:21:04+09:00',
+    INDEX_KEY: 'index--2023-03-05T21:55:12+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -145,6 +143,37 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <!--<![endif]-->
 
 
+<script type="module">
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+        let tocElement = document.getElementById("markdown-toc");
+
+        if(tocElement){
+            let affixedDiv = document.createElement("div");
+            affixedDiv.style.position = "relative";
+            affixedDiv.style.top = "-1rem";
+            tocElement.parentNode.insertBefore(affixedDiv, tocElement);
+
+            let headerList = document.getElementsByClassName("permalink");
+            let prevElement;
+            window.addEventListener("scroll", () => {
+                let hurdleTop = affixedDiv.getBoundingClientRect().top;
+                if(hurdleTop <= 0) tocElement.classList.add("affix");
+                else tocElement.classList.remove("affix");
+
+                for(let i=0;i<headerList.length;i++){
+                    if(headerList[i].getBoundingClientRect().top >= 0){
+                        prevElement?.style.removeProperty("font-weight");
+                        let tocId = "markdown-toc-" + headerList[i].parentNode.id;
+                        prevElement = document.getElementById(tocId);
+                        prevElement.style.fontWeight = "bold";;
+
+                        break;
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 
 </head>
@@ -245,7 +274,17 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <ul>
+    <ul id="markdown-toc">
+  <li><a href="#mongodb-aggregate" id="markdown-toc-mongodb-aggregate">[MongoDB] Aggregate</a>    <ul>
+      <li><a href="#rdb와-비교" id="markdown-toc-rdb와-비교">RDB와 비교</a></li>
+      <li><a href="#예시" id="markdown-toc-예시">예시</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mongodb-aggregate">[MongoDB] Aggregate</h2>
+
+<ul>
   <li>find로 처리하기 어려운 데이터를 가공하기 위한 기능</li>
   <li>pipeline 형식으로 동작하며 <strong><code class="language-plaintext highlighter-rouge">match, group, sort 등</code></strong>다양한 스테이지 값 지원 (<a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/">MongoDB Aggregate Stage</a>)</li>
 </ul>
@@ -300,91 +339,66 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 </table>
 
 <h3 id="예시">예시</h3>
-<details open="">
-<summary>data</summary>
-
-<div>
-
+<ul>
+  <li>data
     <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">[{</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"강남"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"교대"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23454"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사당"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42231"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="err">----------------------------</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"논현"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49893"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9000</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"강남"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23431"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"강남"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23431"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">-----------------------------</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700</span><span class="w">
       </span><span class="p">}</span><span class="w">
   </span><span class="p">}]</span><span class="w">
 </span></code></pre></div>    </div>
-  </div>
-</details>
-
-<h4 id="project">$project</h4>
-<ul>
-  <li>필드 포함/제외, 새 필드 추가, 기존 필드 재설정 등 기존의 값으로 출력을 재설정</li>
-</ul>
-
-<h4 id="match">$match</h4>
-<ul>
-  <li>지정한 조건과 일치하는 값이 나오도록 필터링 역할을 함</li>
-  <li>$eq, $in, $and, $gt 등 다양한 비교연산자 지원
-    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
-<span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}}</span>
-  <span class="p">])</span>
+  </li>
+  <li>$match
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}}</span>
+<span class="p">])</span>
 </code></pre></div>    </div>
     <p><img src="/assets/img/post/2023-02-20/match_result.png" alt="match_result" /></p>
   </li>
+  <li>$sort
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}},</span>
+  <span class="p">{</span> <span class="err">$</span><span class="n">sort</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.price'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>                 <span class="o">//</span> <span class="mi">1</span><span class="p">:</span> <span class="k">Asc</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="k">Desc</span>
+<span class="p">]);</span>
+</code></pre></div>    </div>
+    <p><img src="/assets/img/post/2023-02-20/sort_result.png" alt="sort_result" /></p>
+  </li>
 </ul>
-
-<h4 id="sort">$sort</h4>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
-    <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}},</span>
-    <span class="p">{</span> <span class="err">$</span><span class="n">sort</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.price'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>                 <span class="o">//</span> <span class="mi">1</span><span class="p">:</span> <span class="k">Asc</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="k">Desc</span>
-  <span class="p">]);</span>
-</code></pre></div></div>
-<p><img src="/assets/img/post/2023-02-20/sort_result.png" alt="sort_result" /></p>
 
   
 </article>

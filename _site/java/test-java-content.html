@@ -35,8 +35,6 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta property="og:title" content="Java 테스트 게시글" />
 <meta name="author" content="ByungJin Park" />
 <meta property="og:locale" content="ko_KR, en_US" />
-<meta name="description" content="자바 관련 내용2" />
-<meta property="og:description" content="자바 관련 내용2" />
 <link rel="canonical" href="http://localhost:4000/java/test-java-content.html" />
 <meta property="og:url" content="http://localhost:4000/java/test-java-content.html" />
 <meta property="og:site_name" content="Develop Log" />
@@ -45,7 +43,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Java 테스트 게시글" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-01-03T20:08:26+09:00","datePublished":"2022-01-01T00:00:00+09:00","description":"자바 관련 내용2","headline":"Java 테스트 게시글","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/java/test-java-content.html"},"url":"http://localhost:4000/java/test-java-content.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-03-05T21:47:17+09:00","datePublished":"2022-01-01T00:00:00+09:00","headline":"Java 테스트 게시글","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/java/test-java-content.html"},"url":"http://localhost:4000/java/test-java-content.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -114,7 +112,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-02-21T21:05:36+09:00',
+    INDEX_KEY: 'index--2023-03-05T21:55:12+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -145,6 +143,37 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <!--<![endif]-->
 
 
+<script type="module">
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+        let tocElement = document.getElementById("markdown-toc");
+
+        if(tocElement){
+            let affixedDiv = document.createElement("div");
+            affixedDiv.style.position = "relative";
+            affixedDiv.style.top = "-1rem";
+            tocElement.parentNode.insertBefore(affixedDiv, tocElement);
+
+            let headerList = document.getElementsByClassName("permalink");
+            let prevElement;
+            window.addEventListener("scroll", () => {
+                let hurdleTop = affixedDiv.getBoundingClientRect().top;
+                if(hurdleTop <= 0) tocElement.classList.add("affix");
+                else tocElement.classList.remove("affix");
+
+                for(let i=0;i<headerList.length;i++){
+                    if(headerList[i].getBoundingClientRect().top >= 0){
+                        prevElement?.style.removeProperty("font-weight");
+                        let tocId = "markdown-toc-" + headerList[i].parentNode.id;
+                        prevElement = document.getElementById(tocId);
+                        prevElement.style.fontWeight = "bold";;
+
+                        break;
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 
 </head>
@@ -245,7 +274,16 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <p>자바 관련 내용2</p>
+    <ul id="markdown-toc">
+  <li><a href="#자바-내용1" id="markdown-toc-자바-내용1">자바 내용1</a></li>
+  <li><a href="#자바-내용2" id="markdown-toc-자바-내용2">자바 내용2</a></li>
+</ul>
+
+<p>#자바 관련 내용2</p>
+
+<h2 id="자바-내용1">자바 내용1</h2>
+
+<h2 id="자바-내용2">자바 내용2</h2>
 
   
 </article>
@@ -370,7 +408,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" class="flip-title"><span>[CodeUp] 그림판 채우기</span></a>  <time class="faded fine" datetime="2023-02-21T00:00:00+09:00">21 Feb 2023</time></li>                        <li class="h4">  <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" class="flip-title"><span>[CodeUp] 숫자등고선</span></a>  <time class="faded fine" datetime="2023-02-19T00:00:00+09:00">19 Feb 2023</time></li>                        <li class="h4">  <a href="/java/Embedded.html" class="flip-title"><span>[JPA] @Embedded, @Embeddable</span></a>  <time class="faded fine" datetime="2023-02-06T00:00:00+09:00">06 Feb 2023</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" class="flip-title"><span>[CodeUp] 그림판 채우기</span></a>  <time class="faded fine" datetime="2023-02-21T00:00:00+09:00">21 Feb 2023</time></li>                        <li class="h4">  <a href="/db/mongo-aggregate.html" class="flip-title"><span>[MongoDB] Aggregate</span></a>  <time class="faded fine" datetime="2023-02-20T00:00:00+09:00">20 Feb 2023</time></li>                        <li class="h4">  <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" class="flip-title"><span>[CodeUp] 숫자등고선</span></a>  <time class="faded fine" datetime="2023-02-19T00:00:00+09:00">19 Feb 2023</time></li>            </ul></aside>
 
   
 

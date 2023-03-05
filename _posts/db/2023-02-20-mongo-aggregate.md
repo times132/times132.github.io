@@ -5,6 +5,8 @@ subtitle: "Aggregate란?"
 category: db
 tags: db
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
 
 ## [MongoDB] Aggregate
 

@@ -35,8 +35,6 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta property="og:title" content="[프로그래머스] 부대복귀" />
 <meta name="author" content="ByungJin Park" />
 <meta property="og:locale" content="ko_KR, en_US" />
-<meta name="description" content="문제 설명" />
-<meta property="og:description" content="문제 설명" />
 <link rel="canonical" href="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" />
 <meta property="og:url" content="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" />
 <meta property="og:site_name" content="Develop Log" />
@@ -45,7 +43,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="[프로그래머스] 부대복귀" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-02-21T21:02:28+09:00","datePublished":"2022-01-02T00:00:00+09:00","description":"문제 설명","headline":"[프로그래머스] 부대복귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"},"url":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ByungJin Park"},"dateModified":"2023-03-05T21:54:15+09:00","datePublished":"2022-01-02T00:00:00+09:00","headline":"[프로그래머스] 부대복귀","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"},"url":"http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -114,7 +112,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-02-21T21:05:36+09:00',
+    INDEX_KEY: 'index--2023-03-05T21:55:12+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -145,6 +143,37 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <!--<![endif]-->
 
 
+<script type="module">
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+        let tocElement = document.getElementById("markdown-toc");
+
+        if(tocElement){
+            let affixedDiv = document.createElement("div");
+            affixedDiv.style.position = "relative";
+            affixedDiv.style.top = "-1rem";
+            tocElement.parentNode.insertBefore(affixedDiv, tocElement);
+
+            let headerList = document.getElementsByClassName("permalink");
+            let prevElement;
+            window.addEventListener("scroll", () => {
+                let hurdleTop = affixedDiv.getBoundingClientRect().top;
+                if(hurdleTop <= 0) tocElement.classList.add("affix");
+                else tocElement.classList.remove("affix");
+
+                for(let i=0;i<headerList.length;i++){
+                    if(headerList[i].getBoundingClientRect().top >= 0){
+                        prevElement?.style.removeProperty("font-weight");
+                        let tocId = "markdown-toc-" + headerList[i].parentNode.id;
+                        prevElement = document.getElementById(tocId);
+                        prevElement.style.fontWeight = "bold";;
+
+                        break;
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 
 </head>
@@ -245,7 +274,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <h3 id="문제-설명">문제 설명</h3>
+    <ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
 
 <p>강철부대의 각 부대원이 여러 지역에 뿔뿔이 흩어져 특수 임무를 수행 중입니다. 지도에서 강철부대가 위치한 지역을 포함한 각 지역은 유일한 번호로 구분되며, 두 지역 간의 길을 통과하는 데 걸리는 시간은 모두 1로 동일합니다. 임무를 수행한 각 부대원은 지도 정보를 이용하여 최단시간에 부대로 복귀하고자 합니다. 다만 적군의 방해로 인해, 임무의 시작 때와 다르게 되돌아오는 경로가 없어져 복귀가 불가능한 부대원도 있을 수 있습니다.</p>
 
@@ -460,7 +495,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
     
 
 
-  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" class="flip-title"><span>[CodeUp] 그림판 채우기</span></a>  <time class="faded fine" datetime="2023-02-21T00:00:00+09:00">21 Feb 2023</time></li>                        <li class="h4">  <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" class="flip-title"><span>[CodeUp] 숫자등고선</span></a>  <time class="faded fine" datetime="2023-02-19T00:00:00+09:00">19 Feb 2023</time></li>                        <li class="h4">  <a href="/java/Embedded.html" class="flip-title"><span>[JPA] @Embedded, @Embeddable</span></a>  <time class="faded fine" datetime="2023-02-06T00:00:00+09:00">06 Feb 2023</time></li>            </ul></aside>
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" class="flip-title"><span>[CodeUp] 그림판 채우기</span></a>  <time class="faded fine" datetime="2023-02-21T00:00:00+09:00">21 Feb 2023</time></li>                        <li class="h4">  <a href="/db/mongo-aggregate.html" class="flip-title"><span>[MongoDB] Aggregate</span></a>  <time class="faded fine" datetime="2023-02-20T00:00:00+09:00">20 Feb 2023</time></li>                        <li class="h4">  <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" class="flip-title"><span>[CodeUp] 숫자등고선</span></a>  <time class="faded fine" datetime="2023-02-19T00:00:00+09:00">19 Feb 2023</time></li>            </ul></aside>
 
   
 
