@@ -113,7 +113,7 @@ Powered by Hydejack v9.1.6 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2023-02-21T21:05:36+09:00',
+    INDEX_KEY: 'index--2023-03-05T21:55:12+09:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -144,6 +144,37 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <!--<![endif]-->
 
 
+<script type="module">
+    document.querySelector('hy-push-state').addEventListener('load', () => {
+        let tocElement = document.getElementById("markdown-toc");
+
+        if(tocElement){
+            let affixedDiv = document.createElement("div");
+            affixedDiv.style.position = "relative";
+            affixedDiv.style.top = "-1rem";
+            tocElement.parentNode.insertBefore(affixedDiv, tocElement);
+
+            let headerList = document.getElementsByClassName("permalink");
+            let prevElement;
+            window.addEventListener("scroll", () => {
+                let hurdleTop = affixedDiv.getBoundingClientRect().top;
+                if(hurdleTop <= 0) tocElement.classList.add("affix");
+                else tocElement.classList.remove("affix");
+
+                for(let i=0;i<headerList.length;i++){
+                    if(headerList[i].getBoundingClientRect().top >= 0){
+                        prevElement?.style.removeProperty("font-weight");
+                        let tocId = "markdown-toc-" + headerList[i].parentNode.id;
+                        prevElement = document.getElementById(tocId);
+                        prevElement.style.fontWeight = "bold";;
+
+                        break;
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 
 </head>
@@ -391,16 +422,62 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <h3 id="문제-설명">문제 설명</h3>
-<p><strong><code class="language-plaintext highlighter-rouge">10 * 10</code></strong> 크기의 그림이 있다.
-이 그림에 그림판 색 채우기 기능을 구현하시오.</p>
-
+    
 
     
     
     <footer>
       <p class="read-more">
         Continue reading <a class="heading flip-title" href="/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html">[CodeUp] 그림판 채우기</a>
+
+      </p>
+    </footer>
+  
+</article>
+
+
+  
+
+
+
+
+
+<article id="post-db-mongo-aggregate" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      <a href="/db/mongo-aggregate.html" class="flip-title">
+        [MongoDB] Aggregate
+      </a>
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2023-02-20T00:00:00+09:00">20 Feb 2023</time> in <a href="/db/" class="flip-title">DB</a> on <span>Db</span>
+      </span>
+      
+    </div>
+
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+
+  </header>
+
+  
+    
+
+    
+    
+    <footer>
+      <p class="read-more">
+        Continue reading <a class="heading flip-title" href="/db/mongo-aggregate.html">[MongoDB] Aggregate</a>
 
       </p>
     </footer>
@@ -443,9 +520,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <h3 id="문제-설명">문제 설명</h3>
-<p>어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.</p>
-
+    
 
     
     
@@ -544,8 +619,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <h3 id="문제-설명">문제 설명</h3>
-
+    
 
     
     
@@ -594,8 +668,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <h3 id="문제-설명">문제 설명</h3>
-
+    
 
     
     
@@ -644,8 +717,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-    <p>자바 관련 내용2</p>
-
+    
 
     
     

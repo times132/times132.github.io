@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-02-21T21:05:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[CodeUp] 그림판 채우기</title><link href="http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" rel="alternate" type="text/html" title="[CodeUp] 그림판 채우기" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T21:01:46+09:00</updated><id>http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-03-05T21:55:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[CodeUp] 그림판 채우기</title><link href="http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html" rel="alternate" type="text/html" title="[CodeUp] 그림판 채우기" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-03-05T21:55:11+09:00</updated><id>http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B7%B8%EB%A6%BC%ED%8C%90%EC%B1%84%EC%9A%B0%EA%B8%B0.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
 <p><strong><code class="language-plaintext highlighter-rouge">10 * 10</code></strong> 크기의 그림이 있다.
 이 그림에 그림판 색 채우기 기능을 구현하시오.</p>
 
@@ -67,7 +73,137 @@ __________
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">paint</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /><summary type="html"><![CDATA[문제 설명 10 * 10 크기의 그림이 있다. 이 그림에 그림판 색 채우기 기능을 구현하시오.]]></summary></entry><entry><title type="html">[CodeUp] 숫자등고선</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" rel="alternate" type="text/html" title="[CodeUp] 숫자등고선" /><published>2023-02-19T00:00:00+09:00</published><updated>2023-02-21T21:02:28+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /></entry><entry><title type="html">[MongoDB] Aggregate</title><link href="http://localhost:4000/db/mongo-aggregate.html" rel="alternate" type="text/html" title="[MongoDB] Aggregate" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-03-05T21:53:36+09:00</updated><id>http://localhost:4000/db/mongo-aggregate</id><content type="html" xml:base="http://localhost:4000/db/mongo-aggregate.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#mongodb-aggregate" id="markdown-toc-mongodb-aggregate">[MongoDB] Aggregate</a>    <ul>
+      <li><a href="#rdb와-비교" id="markdown-toc-rdb와-비교">RDB와 비교</a></li>
+      <li><a href="#예시" id="markdown-toc-예시">예시</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mongodb-aggregate">[MongoDB] Aggregate</h2>
+
+<ul>
+  <li>find로 처리하기 어려운 데이터를 가공하기 위한 기능</li>
+  <li>pipeline 형식으로 동작하며 <strong><code class="language-plaintext highlighter-rouge">match, group, sort 등</code></strong>다양한 스테이지 값 지원 (<a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/">MongoDB Aggregate Stage</a>)</li>
+</ul>
+
+<h3 id="rdb와-비교">RDB와 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>where</td>
+      <td>$match</td>
+    </tr>
+    <tr>
+      <td>group by</td>
+      <td>$group</td>
+    </tr>
+    <tr>
+      <td>having</td>
+      <td>$match</td>
+    </tr>
+    <tr>
+      <td>select</td>
+      <td>$project</td>
+    </tr>
+    <tr>
+      <td>order by</td>
+      <td>$sort</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>$limit</td>
+    </tr>
+    <tr>
+      <td>sum</td>
+      <td>$sum</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>$sum</td>
+    </tr>
+    <tr>
+      <td>join</td>
+      <td>$lookup</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="예시">예시</h3>
+<ul>
+  <li>data
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">----------------------------</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">-----------------------------</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"사과"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"딸기"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7500</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"food"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"바나나"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>$match
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}}</span>
+<span class="p">])</span>
+</code></pre></div>    </div>
+    <p><img src="/assets/img/post/2023-02-20/match_result.png" alt="match_result" /></p>
+  </li>
+  <li>$sort
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span><span class="p">.</span><span class="n">blog</span><span class="p">.</span><span class="k">aggregate</span><span class="p">([</span>
+  <span class="p">{</span> <span class="err">$</span><span class="k">match</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.name'</span><span class="p">:</span> <span class="p">{</span><span class="err">$</span><span class="n">eq</span><span class="p">:</span> <span class="s1">'바나나'</span><span class="p">}}},</span>
+  <span class="p">{</span> <span class="err">$</span><span class="n">sort</span><span class="p">:</span> <span class="p">{</span><span class="s1">'food.price'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>                 <span class="o">//</span> <span class="mi">1</span><span class="p">:</span> <span class="k">Asc</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="k">Desc</span>
+<span class="p">]);</span>
+</code></pre></div>    </div>
+    <p><img src="/assets/img/post/2023-02-20/sort_result.png" alt="sort_result" /></p>
+  </li>
+</ul>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="db" /><category term="db" /></entry><entry><title type="html">[CodeUp] 숫자등고선</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html" rel="alternate" type="text/html" title="[CodeUp] 숫자등고선" /><published>2023-02-19T00:00:00+09:00</published><updated>2023-03-05T21:54:58+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%93%B1%EA%B3%A0%EC%84%A0.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
 <p>어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.</p>
 
 <p>여러분들은 배열크기 N과 시작위치 X, Y를 입력받아 숫자등고선을 만드시오.</p>
@@ -121,7 +257,13 @@ __________
 <span class="n">bfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">','</span><span class="p">,</span><span class="s">''</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /><summary type="html"><![CDATA[문제 설명 어느날 등산을하다가 길을 찾기 위해 지도를 보다가 땅의 높낮이를 표시되어 있는 등고선을 보면서 문득 2차원 배열로 숫자등고선을 만드는 문제가 생각났다.]]></summary></entry><entry><title type="html">[JPA] @Embedded, @Embeddable</title><link href="http://localhost:4000/java/Embedded.html" rel="alternate" type="text/html" title="[JPA] @Embedded, @Embeddable" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-19T20:41:36+09:00</updated><id>http://localhost:4000/java/Embedded</id><content type="html" xml:base="http://localhost:4000/java/Embedded.html"><![CDATA[]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="jpa" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[백준] ATM</title><link href="http://localhost:4000/algorithm/ATM.html" rel="alternate" type="text/html" title="[백준] ATM" /><published>2023-01-17T00:00:00+09:00</published><updated>2023-02-21T21:05:12+09:00</updated><id>http://localhost:4000/algorithm/ATM</id><content type="html" xml:base="http://localhost:4000/algorithm/ATM.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /></entry><entry><title type="html">[JPA] @Embedded, @Embeddable</title><link href="http://localhost:4000/java/Embedded.html" rel="alternate" type="text/html" title="[JPA] @Embedded, @Embeddable" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-03-05T21:14:50+09:00</updated><id>http://localhost:4000/java/Embedded</id><content type="html" xml:base="http://localhost:4000/java/Embedded.html"><![CDATA[]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="jpa" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[백준] ATM</title><link href="http://localhost:4000/algorithm/ATM.html" rel="alternate" type="text/html" title="[백준] ATM" /><published>2023-01-17T00:00:00+09:00</published><updated>2023-03-05T21:54:36+09:00</updated><id>http://localhost:4000/algorithm/ATM</id><content type="html" xml:base="http://localhost:4000/algorithm/ATM.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
 
 <p>인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다. 사람은 1번부터 N번까지 번호가 매겨져 있으며, i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.</p>
 
@@ -160,7 +302,13 @@ __________
     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="Greedy" /><summary type="html"><![CDATA[문제 설명]]></summary></entry><entry><title type="html">[프로그래머스] 부대복귀</title><link href="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" rel="alternate" type="text/html" title="[프로그래머스] 부대복귀" /><published>2022-01-02T00:00:00+09:00</published><updated>2023-02-21T21:02:28+09:00</updated><id>http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"><![CDATA[<h3 id="문제-설명">문제 설명</h3>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="Greedy" /></entry><entry><title type="html">[프로그래머스] 부대복귀</title><link href="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html" rel="alternate" type="text/html" title="[프로그래머스] 부대복귀" /><published>2022-01-02T00:00:00+09:00</published><updated>2023-03-05T21:54:15+09:00</updated><id>http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B6%80%EB%8C%80%EB%B3%B5%EA%B7%80.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
 
 <p>강철부대의 각 부대원이 여러 지역에 뿔뿔이 흩어져 특수 임무를 수행 중입니다. 지도에서 강철부대가 위치한 지역을 포함한 각 지역은 유일한 번호로 구분되며, 두 지역 간의 길을 통과하는 데 걸리는 시간은 모두 1로 동일합니다. 임무를 수행한 각 부대원은 지도 정보를 이용하여 최단시간에 부대로 복귀하고자 합니다. 다만 적군의 방해로 인해, 임무의 시작 때와 다르게 되돌아오는 경로가 없어져 복귀가 불가능한 부대원도 있을 수 있습니다.</p>
 
@@ -250,4 +398,13 @@ __________
         <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /><summary type="html"><![CDATA[문제 설명]]></summary></entry><entry><title type="html">Java 테스트 게시글</title><link href="http://localhost:4000/java/test-java-content.html" rel="alternate" type="text/html" title="Java 테스트 게시글" /><published>2022-01-01T00:00:00+09:00</published><updated>2023-01-03T20:08:26+09:00</updated><id>http://localhost:4000/java/test-java-content</id><content type="html" xml:base="http://localhost:4000/java/test-java-content.html"><![CDATA[<p>자바 관련 내용2</p>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="spring" /><summary type="html"><![CDATA[자바 관련 내용2]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /></entry><entry><title type="html">Java 테스트 게시글</title><link href="http://localhost:4000/java/test-java-content.html" rel="alternate" type="text/html" title="Java 테스트 게시글" /><published>2022-01-01T00:00:00+09:00</published><updated>2023-03-05T21:47:17+09:00</updated><id>http://localhost:4000/java/test-java-content</id><content type="html" xml:base="http://localhost:4000/java/test-java-content.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#자바-내용1" id="markdown-toc-자바-내용1">자바 내용1</a></li>
+  <li><a href="#자바-내용2" id="markdown-toc-자바-내용2">자바 내용2</a></li>
+</ul>
+
+<p>#자바 관련 내용2</p>
+
+<h2 id="자바-내용1">자바 내용1</h2>
+
+<h2 id="자바-내용2">자바 내용2</h2>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="java" /><category term="spring" /></entry></feed>
