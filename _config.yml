@@ -92,7 +92,7 @@ paginate_path:         /:num/
 # Sidebar image and theme color of the site.
 accent_image:
   background:          center url(/assets/img/sidebar-bg.jpg)
-  overlay:             false
+  overlay:             true
 accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,
