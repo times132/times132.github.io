@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-03-07T22:06:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[백준] 영역 구하기</title><link href="http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0.html" rel="alternate" type="text/html" title="[백준] 영역 구하기" /><published>2023-03-06T00:00:00+09:00</published><updated>2023-03-07T22:05:49+09:00</updated><id>http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0.html"><![CDATA[<ul id="markdown-toc">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko-KR, en-US"><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko-KR, en-US" /><updated>2023-03-19T22:31:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Develop Log</title><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><entry><title type="html">[백준] 상금헌터</title><link href="http://localhost:4000/algorithm/%EC%83%81%EA%B8%88%ED%97%8C%ED%84%B0.html" rel="alternate" type="text/html" title="[백준] 상금헌터" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-19T22:31:09+09:00</updated><id>http://localhost:4000/algorithm/%EC%83%81%EA%B8%88%ED%97%8C%ED%84%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%83%81%EA%B8%88%ED%97%8C%ED%84%B0.html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
+  <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
+  <li><a href="#출력" id="markdown-toc-출력">출력</a></li>
+  <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
+</ul>
+
+<h3 id="문제-설명">문제 설명</h3>
+<p>2017년에 이어, 2018년에도 카카오 코드 페스티벌이 개최된다!</p>
+
+<p>카카오 코드 페스티벌에서 빠질 수 없는 것은 바로 상금이다. 2017년에 개최된 제1회 코드 페스티벌에서는, 본선 진출자 100명 중 21명에게 아래와 같은 기준으로 상금을 부여하였다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>순위</th>
+      <th>상금</th>
+      <th>인원</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1등</td>
+      <td>500만원</td>
+      <td>1명</td>
+    </tr>
+    <tr>
+      <td>2등</td>
+      <td>300만원</td>
+      <td>2명</td>
+    </tr>
+    <tr>
+      <td>3등</td>
+      <td>200만원</td>
+      <td>3명</td>
+    </tr>
+    <tr>
+      <td>4등</td>
+      <td>50만원</td>
+      <td>4명</td>
+    </tr>
+    <tr>
+      <td>5등</td>
+      <td>30만원</td>
+      <td>5명</td>
+    </tr>
+    <tr>
+      <td>6등</td>
+      <td>10만원</td>
+      <td>6명</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2018년에 개최될 제2회 코드 페스티벌에서는 상금의 규모가 확대되어, 본선 진출자 64명 중 31명에게 아래와 같은 기준으로 상금을 부여할 예정이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>순위</th>
+      <th>상금</th>
+      <th>인원</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1등</td>
+      <td>512만원</td>
+      <td>1명</td>
+    </tr>
+    <tr>
+      <td>2등</td>
+      <td>256만원</td>
+      <td>2명</td>
+    </tr>
+    <tr>
+      <td>3등</td>
+      <td>128만원</td>
+      <td>4명</td>
+    </tr>
+    <tr>
+      <td>4등</td>
+      <td>64만원</td>
+      <td>8명</td>
+    </tr>
+    <tr>
+      <td>5등</td>
+      <td>32만원</td>
+      <td>16명</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>제이지는 자신이 코드 페스티벌에 출전하여 받을 수 있을 상금이 얼마인지 궁금해졌다. 그는 자신이 두 번의 코드 페스티벌 본선 대회에서 얻을 수 있을 총 상금이 얼마인지 알아보기 위해, 상상력을 발휘하여 아래와 같은 가정을 하였다.</p>
+
+<p>제1회 코드 페스티벌 본선에 진출하여 a등(1 ≤ a ≤ 100)등을 하였다. 단, 진출하지 못했다면 a = 0으로 둔다.</p>
+
+<p>제2회 코드 페스티벌 본선에 진출하여 b등(1 ≤ b ≤ 64)등을 할 것이다. 단, 진출하지 못했다면 b = 0으로 둔다.</p>
+
+<p>제이지는 이러한 가정에 따라, 자신이 받을 수 있는 총 상금이 얼마인지를 알고 싶어한다.</p>
+
+<hr />
+
+<h3 id="입력">입력</h3>
+
+<p>첫 번째 줄에 제이지가 상상력을 발휘하여 가정한 횟수 <strong><code class="language-plaintext highlighter-rouge">T(1 ≤ T ≤ 1,000)</code></strong>가 주어진다.</p>
+
+<p>다음 T개 줄에는 한 줄에 하나씩 제이지가 해본 가정에 대한 정보가 주어진다. 각 줄에는 두 개의 음이 아닌 정수 <strong><code class="language-plaintext highlighter-rouge">a(0 ≤ a ≤ 100)</code></strong>와 <strong><code class="language-plaintext highlighter-rouge">b(0 ≤ b ≤ 64)</code></strong>가 공백 하나를 사이로 두고 주어진다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
+8 4
+13 19
+8 10
+18 18
+8 25
+13 16
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="출력">출력</h3>
+
+<p>각 가정이 성립할 때 제이지가 받을 상금을 원 단위의 정수로 한 줄에 하나씩 출력한다. 입력이 들어오는 순서대로 출력해야 한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1780000
+620000
+1140000
+420000
+820000
+620000
+</code></pre></div></div>
+
+<h3 id="풀이">풀이</h3>
+
+<p>1회, 2회차 등수에 대한 상금을 리스트에 하드코딩해서 입력받는 등수에 따라 상금을 계산하게 작성했다.</p>
+
+<p>상금을 받지 못하는 등수부터는 상금 총합에 0원을 더하도록 했다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">first</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">second</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">+=</span> <span class="n">first</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10000</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">+=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">+=</span> <span class="n">second</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10000</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">+=</span> <span class="mi">0</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">reward</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+    
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="Math" /></entry><entry><title type="html">[백준] 영역 구하기</title><link href="http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0.html" rel="alternate" type="text/html" title="[백준] 영역 구하기" /><published>2023-03-06T00:00:00+09:00</published><updated>2023-03-16T22:30:14+09:00</updated><id>http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%98%81%EC%97%AD%EA%B5%AC%ED%95%98%EA%B8%B0.html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
   <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
   <li><a href="#출력" id="markdown-toc-출력">출력</a></li>
@@ -88,7 +247,7 @@
 <span class="n">result</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /></entry><entry><title type="html">[CodeUp] Up 2</title><link href="http://localhost:4000/algorithm/Up2.html" rel="alternate" type="text/html" title="[CodeUp] Up 2" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-07T22:05:49+09:00</updated><id>http://localhost:4000/algorithm/Up2</id><content type="html" xml:base="http://localhost:4000/algorithm/Up2.html"><![CDATA[<ul id="markdown-toc">
+</code></pre></div></div>]]></content><author><name>ByungJin Park</name><email>times132@gmail.com</email></author><category term="algorithm" /><category term="DFS/BFS" /></entry><entry><title type="html">[CodeUp] Up 2</title><link href="http://localhost:4000/algorithm/Up2.html" rel="alternate" type="text/html" title="[CodeUp] Up 2" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-16T22:30:14+09:00</updated><id>http://localhost:4000/algorithm/Up2</id><content type="html" xml:base="http://localhost:4000/algorithm/Up2.html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#문제-설명" id="markdown-toc-문제-설명">문제 설명</a></li>
   <li><a href="#입력" id="markdown-toc-입력">입력</a></li>
   <li><a href="#풀이" id="markdown-toc-풀이">풀이</a></li>
