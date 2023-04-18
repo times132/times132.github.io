@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4fe62db-f6c8-4a91-94e5-c861f5cc1cae" name="Changes" comment="mongodb aggregation project" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="times132" />
+        <option name="repository" value="times132.github.io" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="recentSearchFilters">
+      <list>
+        <option value="state:open" />
+      </list>
+    </option>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JX4LJXnllsXDeh1Vxt95scVsr2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Intellij\github.io\_posts\algorithm" />
+      <recent name="F:\Intellij\github.io\_featured_categories" />
+      <recent name="F:\Intellij\github.io\_featured_tags" />
+      <recent name="F:\Intellij\github.io\assets\img" />
+      <recent name="F:\Intellij\github.io\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Intellij\github.io" />
+      <recent name="F:\Intellij\github.io\_includes\templates\pro" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4fe62db-f6c8-4a91-94e5-c861f5cc1cae" name="Changes" comment="" />
+      <created>1672211039788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672211039788</updated>
+      <workItem from="1672211042063" duration="21476000" />
+      <workItem from="1672571251229" duration="3888000" />
+      <workItem from="1672580720953" duration="2022000" />
+      <workItem from="1672613972571" duration="9798000" />
+      <workItem from="1672743007513" duration="5853000" />
+      <workItem from="1673187830180" duration="470000" />
+      <workItem from="1673218890028" duration="10913000" />
+      <workItem from="1673263699923" duration="98000" />
+      <workItem from="1673263830405" duration="523000" />
+      <workItem from="1673274734061" duration="957000" />
+      <workItem from="1673823648157" duration="738000" />
+      <workItem from="1673957486513" duration="3196000" />
+      <workItem from="1675042368138" duration="1296000" />
+      <workItem from="1675694502865" duration="1894000" />
+      <workItem from="1676806856780" duration="2431000" />
+      <workItem from="1676862090413" duration="11000" />
+      <workItem from="1676890323004" duration="4544000" />
+      <workItem from="1676903097126" duration="2105000" />
+      <workItem from="1676978564948" duration="9120000" />
+      <workItem from="1677928560643" duration="8081000" />
+      <workItem from="1678018472236" duration="9989000" />
+      <workItem from="1678076952161" duration="22000" />
+      <workItem from="1678099308358" duration="6619000" />
+      <workItem from="1678194285370" duration="161000" />
+      <workItem from="1678283036858" duration="5116000" />
+      <workItem from="1678973344735" duration="1982000" />
+      <workItem from="1679231185549" duration="2181000" />
+      <workItem from="1679284025148" duration="12000" />
+      <workItem from="1679487849588" duration="1745000" />
+      <workItem from="1680495872202" duration="6000" />
+      <workItem from="1680522289572" duration="1670000" />
+      <workItem from="1682605802609" duration="599000" />
+    </task>
+    <task id="LOCAL-00001" summary="프로그래머스 ATM 풀이">
+      <created>1676806962826</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676806962827</updated>
+    </task>
+    <task id="LOCAL-00002" summary="CodeUp 그림판 채우기">
+      <created>1676981515026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676981515026</updated>
+    </task>
+    <task id="LOCAL-00003" summary="mongodb aggregation project">
+      <created>1677942949906</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677942949906</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sidebar default fold" />
+    <MESSAGE value="프로그래머스 ATM 풀이" />
+    <MESSAGE value="CodeUp 그림판 채우기" />
+    <MESSAGE value="mongodb aggregation project" />
+    <option name="LAST_COMMIT_MESSAGE" value="mongodb aggregation project" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
